@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civify -spam </title>
+    <link rel="stylesheet" href="M6-spam.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+<body>
+
+  <!-- Header Section -->
+    <header class="header">
+        <div class="header-left">
+          <button onclick="window.location.href='M5-CONTACT.html'" class="back-arrow-btn">←</button>
+            <img src="p.jpg" class="logo" alt="Civify">
+            <span class="brand">CIVIFY</span>
+        </div>
+
+ <nav class="nav">
+    <a class="nav-item" href="M3-HOME.html">Home</a>
+    <a class="nav-item" href="B3-ABOUT.html">About</a>
+    <a class="nav-item" href="M4-REPORT.html">Report Problem</a>
+    <a class="nav-item" href="B4-Track.html">Track Issue</a>
+    <a class="nav-item active" href="M5-CONTACT.html">Contact Us</a>
+</nav>
+<!-- Right -->
+    <div class="nav-right">
+        <a href="M2-LOGIN.html" class="btn login">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+        </a>
+        <a href="B1-SIGN.html" class="btn signup">
+            <i class="fa-solid fa-user-plus"></i> Sign Up
+        </a>
+
+        <a href="B2-GOV,S.html" class="btn govt">
+            <i class="fa-solid fa-building-columns"></i> Govt Sign Up
+        </a>
+        <div class="header-right">
+         <a href="profile.html" class="header-right" style="text-decoration:none; color:inherit;">
+            <img src="dog.jpg" class="user-img">
+            <p>Sheikh Hasina</p>
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content Section --> 
+    <main class="contact-wrapper">
+  <div class="main-content">
+        <div class="spam-page-container">
+            <div class="shield-wrapper">
+                <i class="fas fa-user-shield shield-icon"></i>
+            </div>
+
+            <h1>System Protected</h1>
+            <p class="subtitle">Our advanced spam detector is actively monitoring all interactions to keep <b>Civify</b> safe and secure for the community.</p>
+
+            <div class="feature-grid">
+                <div class="status-box">
+                    <div class="icon-circle"><i class="fas fa-check"></i></div>
+                    <div>
+                        <h4>Real-time Monitoring</h4>
+                        <p>Status: Active</p>
+                    </div>
+                </div>
+
+                <div class="status-box">
+                    <div class="icon-circle"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4><a href="Bot.html">Bot Protection</a></h4>
+                        <p>Verified Secure</p>
+                    </div>
+                </div>
+
+                <div class="status-box">
+                    <div class="icon-circle"><i class="fas fa-images"></i></div>
+                    <div>
+                        <h4>Duplicate Detection</h4>
+                        <p>Prevents repeat uploads</p>
+                    </div>
+                </div>
+
+                <div class="status-box">
+                    <div class="icon-circle"><i class="fas fa-map-marked-alt"></i></div>
+                    <div>
+                        <h4>Location Grouping</h4>
+                        <p>Smart area clustering</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="M5-CONTACT.html" class="back-link">Return to Contact Page</a>
+        </div>
+    </div>
+<!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Email: support@civify.com</a></li>
+                    <li><a href="#">Phone: +880-XXX-XXXXXX</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 CIVIFY. All your reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents page reload
+            
+            // Hide the form
+            contactForm.style.display = 'none';
+            
+            // Show the success message
+            successMessage.style.display = 'block';
+        });
+     
+const backArrow = document.querySelector(".back-arrow");
+
+if (backArrow) {
+    backArrow.addEventListener("click", () => {
+        window.location.href = "M5-CONTACT.html";
+    });
+}
+
+/* NAVBAR ITEMS */
+document.querySelectorAll(".nav-item").forEach(item => {
+    item.addEventListener("click", () => {
+        const page = item.getAttribute("data-link");
+        if (page) {
+            window.location.href = page;
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:#f4f7f6;
+    
+}
+
+/* ===== HEADER ===== */
+.header{
+    background:linear-gradient(to right,#09fab2,#aff6f0);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Nav Arrow Style */
+.back-arrow-btn {
+    font-size: 26px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+.back-arrow-btn:hover {
+    background: #ffffff;
+    transform: translateX(-5px);
+}
+.logo{width:40px;}
+.brand{font-size:22px;font-weight:bold;}
+
+.nav{display:flex;gap:20px;}
+
+.nav-item{
+    background:#fff;
+    padding:8px 18px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#000;
+    transition:.3s;
+}
+
+.nav-item:hover{transform:translateY(-3px);}
+
+.nav-item.active{
+    color:#6a5cff; 
+    transition: transform 0.6s;
+    border: 2px solid #004887; }
+
+.header-right{
+    text-align:center;
+    font-size:10px;
+    font-weight:bold;
+}
+/* RIGHT */
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.btn{
+    padding:8px 16px;
+    border-radius:25px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+/* Login */
+.login{
+    background:#ffffff;
+    color:#000;
+}
+
+.login:hover{
+    background:#000;
+    color:#fff;
+}
+
+/* Signup */
+.signup{
+    background:#00d4aa;
+    color:#fff;
+}
+
+.signup:hover{
+    background:#009e80;
+}
+
+/* Govt Signup */
+.govt{
+    background:#ffb703;
+    color:#000;
+}
+
+.govt:hover{
+    background:#fb8500;
+    color:#fff;
+}
+.user-img{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:2px solid  #fff;
+}
+
+/* ===== MAIN ===== */
+.main-container{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.report-card{
+    background:#fff;
+    max-width:600px;
+    width:100%;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.1);
+    animation:floatUp .8s ease;
+}
+
+/* animation explain: element niche theke smooth up ashbee */
+@keyframes floatUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);}
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+h2::after{
+    content:'';
+    display:block;
+    width:50px;
+    height:4px;
+    background:#09fab2;
+    margin:10px auto;
+}
+
+.form-group{margin-bottom:20px;}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.form-control{
+    width:100%;
+    padding:12px 15px;
+    border-radius:10px;
+    border:2px solid #e1e1e1;
+    transition:.3s;
+}
+
+.form-control:focus,
+.form-control:hover{
+    border-color:#09fab2;
+    outline:none;
+}
+
+textarea{min-height:100px;
+    resize:vertical;}
+
+/* upload */
+.btn-upload{
+    border:2px dashed #09fab2;
+    padding:15px;
+    border-radius:10px;
+    background:#f9fffb;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+/* NEW: image preview */
+.preview{
+    margin-top:10px;
+    text-align:center;
+}
+.preview img{
+    max-width:100%;
+    border-radius:10px;
+    display:none;
+}
+/* submit button */
+
+.btn-submit{
+    width:100%;
+    padding:15px;
+    background:#e65c00;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    text-align:center;
+    transition:.3s;
+}
+
+.btn-submit:hover{
+    background:#ff6a00;
+    transform:scale(1.03);
+}
+
+/* ===== CSS ONLY SUCCESS LOGIC ===== */
+.success-box{
+    display:none;
+    text-align:center;
+    animation:floatUp .6s ease;
+}
+
+.success-box i{
+    font-size:60px;
+    color:#27ae60;
+    margin-bottom:15px;
+}
+
+#submitToggle:checked ~ form{display:none;}
+#submitToggle:checked ~ .success-box{display:block;}
+.back-btn{
+    margin-top:20px;
+    display:inline-block;
+    cursor:pointer;
+    font-weight:bold;
+    color:#e65c00;
+}
+/* ===== FOOTER ===== */
+.footer {
+   background: linear-gradient(to right, #09fab2, #aff6f0);
+    color: #0b0909;
+    padding: 40px 0 20px 0;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-column:not(:last-child) {
+    border-right: 1px solid#47b670; 
+}
+
+.footer-column h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #1f32c1;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #5de37f;
+    padding-top: 20px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #222528;
+}
+#submitToggle:checked ~ h2{
+    display:none;
+}

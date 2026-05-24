@@ -1,0 +1,332 @@
+/* ===== GENERAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    background: white;
+    font-family: sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: linear-gradient(to right, #09fab2, #aff6f0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    width: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.logo {
+    width: 40px;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-item {
+    background: #fff;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(5, 1, 1, 0.258);
+}
+
+.nav-item.active {
+    color: #6a5cff;
+    transition: transform 0.6s;
+    border: 2px solid #004887;
+}
+
+.nav-item:hover {
+    transform: translateY(-3px);
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+/* RIGHT */
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.btn{
+    padding:8px 16px;
+    border-radius:25px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+/* Login */
+.login{
+    background:#ffffff;
+    color:#000;
+}
+
+.login:hover{
+    background:#000;
+    color:#fff;
+}
+
+/* Signup */
+.signup{
+    background:#00d4aa;
+    color:#fff;
+}
+
+.signup:hover{
+    background:#009e80;
+}
+
+/* Govt Signup */
+.govt{
+    background:#ffb703;
+    color:#000;
+}
+
+.govt:hover{
+    background:#fb8500;
+    color:#fff;
+}
+
+
+.user-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-bottom: 2px;
+    border:2px solid  #fff;
+}
+
+                                   /* ===== MAIN CONTENT ===== */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.headline {
+    color: #1f2937;
+    margin-bottom: 50px;
+    line-height: 1.4;
+}
+
+.headline h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* --- Content Grid --- */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.description-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(58, 208, 81, 0.459);
+    width: 450px;
+    text-align: left;
+    position: relative;
+    font-weight: bold;
+}
+
+.description-card p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.description-card strong {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Right Side: Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.action-btn {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 50px;
+    width: 280px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 2px solid #1abc9c; /* Teal border */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    color: #1abc9c;
+    font-size: 1.5rem;
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.2;
+} 
+
+/* ===== Hover Image Button ===== */
+.hover-img-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hidden image */
+.hover-image {
+    position: absolute;
+    inset: 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.hover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.hover-img-btn:hover .hover-image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hover-img-btn:hover .icon-circle,
+.hover-img-btn:hover .btn-text {
+    opacity: 0;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: linear-gradient(to right, #09fab2, #aff6f0);
+    color: #0b0909;
+    padding: 40px 0 20px 0;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-column:not(:last-child) {
+    border-right: 1px solid #47b670; /* Fixed missing space */
+}
+
+.footer-column h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #1f32c1;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #5de37f;
+    padding-top: 20px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #222528;
+}

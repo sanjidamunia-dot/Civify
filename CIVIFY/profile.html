@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Civify – Profile</title>
+<link rel="stylesheet" href="profile.css">
+
+</head>
+
+<body>
+
+ <!-- Header Section -->
+    <header class="header">
+        <div class="header-left">
+          <button onclick="window.location.href='M3-HOME.html'" class="back-arrow-btn">←</button>
+            <img src="p.jpg" class="logo" alt="Civify">
+            <span class="brand">CIVIFY</span>
+        </div>
+        
+
+ <nav class="nav">
+    <a class="nav-item" href="M3-HOME.html">Home</a>
+    <a class="nav-item" href="B3-ABOUT.html">About</a>
+    <a class="nav-item" href="M4-REPORT.html">Report Problem</a>
+    <a class="nav-item" href="B4-Track.html">Track Issue</a>
+    <a class="nav-item " href="M5-CONTACT.html">Contact Us</a>
+</nav>
+<!-- Right -->
+    <div class="nav-right">
+        <div class="header-right">
+         <a href="profile.html" class="header-right" style="text-decoration:none; color:inherit;">
+            <img src="dog.jpg" class="user-img">
+            <p>Sheikh Hasina</p>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main -->
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="profile-box">
+    <div class="avatar-wrapper">
+      <img src="dog.jpg" id="profilePic">
+      <label class="change-pic">
+        Change
+        <input type="file" hidden onchange="changePic(this)">
+      </label>
+    </div>
+    <h3>Sheikh Hasina</h3>
+    <p>sheikh.hasina@email.com</p>
+  </div>
+
+  <ul class="menu">
+    <li id="menuIssues" class="active" onclick="showIssues(this)">My Reported Issues</li>
+    <li id="menuSettings" onclick="showSettings(this)">Profile Settings</li>
+    <li onclick="setActive(this)">Recent Activity</li>
+    <li>Logout</li>
+  </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- ISSUES LIST -->
+<div id="issuesSection">
+  <h2>My Reported Issues (4)</h2>
+  <div class="cards">
+    <!-- ONLY pothole clickable -->
+    <div class="card" onclick="showPotholeDetails()">
+      <img src="road dmg.png">
+      <div class="info"><b>Pothole</b><p>Oak Avenue</p></div>
+    </div>
+
+    <div class="card">
+      <img src="light dmg.png">
+      <div class="info"><b>Streetlight</b><p>Main Street</p></div>
+    </div>
+
+    <div class="card">
+      <img src="bridge.png">
+      <div class="info"><b>Bridge Repair</b><p>City Road</p></div>
+    </div>
+
+    <div class="card">
+      <img src="drain dmg.png">
+      <div class="info"><b>Drain Blocked</b><p>Sector 5</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- POTHOLE DETAILS -->
+<div id="potholeDetails" style="display:none">
+  <h2>Pothole Report Details</h2>
+
+  <div class="details">
+    <img src="road dmg.png">
+
+    <div class="detail-info">
+      <span class="badge">Pending Review</span>
+
+      <p><b>Location:</b> Oak Avenue, Block-C</p>
+      
+      <p><b>Severity:</b> High</p>
+      <p><b>Description:</b> Large pothole causing vehicle damage and traffic congestion.</p>
+      <p><b>Reported Date:</b> 12 January 2026</p>
+
+      <button class="back-btn" onclick="backToIssues()">← Back to My Reports</button>
+    </div>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<div id="settingsSection" class="settings" style="display:none">
+  <h2>Profile Settings</h2>
+
+  <label>Current Email</label>
+  <input type="email" value="sheikh.hasina@email.com" disabled>
+
+  <label>Update Email</label>
+  <input type="email" placeholder="New Email">
+
+  <label>Current Password</label>
+  <input type="password" value="password123" disabled>
+
+  <label>Update Password</label>
+  <input type="password" placeholder="New Password">
+
+  <label>Phone Number</label>
+  <input type="text" placeholder="+880-XXXXXXXXXX">
+
+  <button id="saveBtn" onclick="saveChanges()">Save Changes</button>
+</div>
+
+</div>
+</div>
+<!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Email: support@civify.com</a></li>
+                    <li><a href="#">Phone: +880-XXX-XXXXXX</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 CIVIFY. All your reserved</p>
+        </div>
+    </footer>
+
+
+<script>
+function setActive(el){
+  document.querySelectorAll(".menu li")
+    .forEach(li=>li.classList.remove("active"));
+  el.classList.add("active");
+}
+
+function showSettings(el){
+  setActive(el);
+  issuesSection.style.display="none";
+  potholeDetails.style.display="none";
+  settingsSection.style.display="block";
+}
+
+function showIssues(el){
+  setActive(el);
+  settingsSection.style.display="none";
+  potholeDetails.style.display="none";
+  issuesSection.style.display="block";
+}
+
+function showPotholeDetails(){
+  issuesSection.style.display="none";
+  settingsSection.style.display="none";
+  potholeDetails.style.display="block";
+}
+
+function backToIssues(){
+  potholeDetails.style.display="none";
+  issuesSection.style.display="block";
+}
+
+function saveChanges(){
+  const btn=document.getElementById("saveBtn");
+  btn.innerText="Saved ✓";
+  btn.classList.add("saved");
+  setTimeout(()=>{
+    btn.innerText="Save Changes";
+    btn.classList.remove("saved");
+    showIssues(document.getElementById("menuIssues"));
+  },1200);
+}
+
+function changePic(input){
+  const reader=new FileReader();
+  reader.onload=e=>profilePic.src=e.target.result;
+  reader.readAsDataURL(input.files[0]);
+}
+</script>
+
+</body>
+</html>

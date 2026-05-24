@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Reports - Civify</title>
+    <link rel="stylesheet" href="total.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-left">
+           <button onclick="window.history.back()" class="back-arrow-btn">←</button>
+            <img src="p.jpg" class="logo" alt="Civify">
+            <span class="brand">CIVIFY</span>
+        </div>
+
+        <div class="header-center-title">
+            <h1>Govt. Civify Dashboard</h1>
+        </div>
+
+        <div class="header-right">
+            <div class="user-profile">
+                <img src="government.jpeg" class="user-img">
+                <p>Admin Profile</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h2 style="text-align:center; margin-bottom:20px;">Total Reports (10)</h2>
+        
+        <div class="report-container">
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Issue Name</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="road.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Pothole Fix</span>
+                                <a href="javascript:void(0)" class="view-link active-link" onclick="openModal()">View Details</a>
+                            </div>
+                        </td>
+                        <td>Uttara</td>
+                        <td><span class="status-text resolved">● Resolved</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="street-light.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Street Light Fix</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Dhanmondi</td>
+                        <td><span class="status-text resolved">● Resolved</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="garbage.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Waste Cleaning</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Gulshan 2</td>
+                        <td><span class="status-text resolved">● Resolved</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="sewage.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Drain Clean</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Mirpur 10</td>
+                        <td><span class="status-text resolved">● Resolved</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="leakage.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Pipe Leakage</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Banani</td>
+                        <td><span class="status-text resolved">● Resolved</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="tree.jpg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Tree Removed</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Badda</td>
+                        <td><span class="status-text resolved">● Resolved</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="wiring.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Electric Wire</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Savar</td>
+                        <td><span class="status-text resolved">● Resolved</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="garbage.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Trash Overflow</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Farmgate</td>
+                        <td><span class="status-text pending">● Pending</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="hole.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Open Manhole</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Old Dhaka</td>
+                        <td><span class="status-text pending">● Pending</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="sea.jpeg" class="report-img"></td>
+                        <td>
+                            <div class="issue-info">
+                                <span class="issue-title">Water Issue</span>
+                                <span class="view-link">View Details</span>
+                            </div>
+                        </td>
+                        <td>Khilgaon</td>
+                        <td><span class="status-text pending">● Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="detailsModal" class="modal"> <!--modal pop up window-->
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img src="road.jpeg" class="modal-img">
+            <h2>Pothole Fix Details</h2>
+            <div class="modal-desc">
+                <p><strong>Location:</strong> Sector 4, Uttara, Dhaka</p>
+                <p><strong>Details:</strong> Citizens reported a massive pothole. Repair work completed within 48 hours.</p>
+                <p><strong>Date:</strong> 15 Jan 2026</p>
+            </div>
+            <button class="modal-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: support@civify.com</li>
+                    <li>Phone: +880-XXX-XXXXXX</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CIVIFY. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() { document.getElementById("detailsModal").style.display = "flex"; }
+        function closeModal() { document.getElementById("detailsModal").style.display = "none"; }
+    </script>
+</body>
+</html>

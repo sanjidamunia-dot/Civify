@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govt Dashboard - Civify</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-left">
+            <button onclick="window.history.back()" class="back-arrow-btn">←</button>
+            <img src="p.jpg" class="logo" alt="Civify Logo">
+            <span class="brand">CIVIFY</span>
+        </div>
+
+        <div class="header-center-title">
+            <h1>Govt. Civify Dashboard</h1>
+        </div>
+
+        <div class="header-right">
+            <div class="profile-trigger" style="cursor:default;">
+                <img src="government.jpeg" class="user-img" alt="Admin">
+                <p>Admin Profile</p>
+            </a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="chart-container-box">
+            <h2>Work Progress Analytics</h2>
+            <div class="chart-wrapper">
+                <canvas id="statusChart"></canvas>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <a href="total.html" class="stat-card">
+                <h3>Total Reports</h3>
+                <p>10</p>
+            </a>
+            <a href="pending.html" class="stat-card pending-border">
+                <h3>Pending Reports</h3>
+                <p class="pending-text">3</p>
+            </a>
+            <a href="resolve.html" class="stat-card">
+                <h3>Resolved Reports</h3>
+                <p>7</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: support@civify.com</li>
+                    <li>Phone: +880-XXX-XXXXXX</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CIVIFY. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('statusChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Pending', 'Resolved'],
+                datasets: [{
+                    data: [3, 7],    /*--3 ta pending data ar 7 ta solved-*/
+                    backgroundColor: ['#e67e22', '#09fab2'],    /*--chart er slice gular rong orange and green set--*/
+                    hoverOffset: 15, /*mouse pie chart er upor nile 15 px baire ashbe*/
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                cutout: '70%',  /*--doughnut chart er mjhkhaner faka --*/
+                responsive: true,  /*mobile ba pc shob scrren er size neyar jonn*/
+                maintainAspectRatio: false, /*chart er parent div er hieght width ney*/
+                plugins: {
+                    legend: {
+                         position: 'bottom', /*pending and resolve lekhagula chart er niche dekhabe*/
+                          labels: { 
+                            padding: 20, 
+                            font: { 
+                                weight: 'bold' } } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

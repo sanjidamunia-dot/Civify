@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civify Track Issue</title>
+    <link rel="stylesheet" href="B4-Track.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body>
+
+    
+                          <!-- Header Section -->
+    <header class="header">
+        <div class="header-left">
+           <button onclick="window.location.href='M4-REPORT.html'" class="back-arrow-btn">←</button>
+    <img src="p.jpg" class="logo">
+    <span class="brand">CIVIFY</span>
+</div>
+<nav class="nav">
+    <a href="M3-HOME.html" class="nav-item">Home</a>
+    <a href="B3-ABOUT.html" class="nav-item">About</a>
+    <a href="M4-REPORT.html" class="nav-item">Report Problem</a>
+    <a href="B4-Track.html" class="nav-item active">Track Issue</a>
+    <a href="M5-CONTACT.html" class="nav-item">Contact Us</a>
+</nav>
+  <!-- Right -->
+    <div class="nav-right">
+        <a href="M2-LOGIN.html" class="btn login">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+        </a>
+<a href="B1-SIGN.html" class="btn signup">
+            <i class="fa-solid fa-user-plus"></i> Sign Up
+        </a>
+
+        <a href="B2-GOV,S.html" class="btn govt">
+            <i class="fa-solid fa-building-columns"></i> Govt Sign Up
+        </a>
+        <div class="header-right">
+             <a href="profile.html" class="header-right" style="text-decoration:none; color:inherit;">
+            <img src="dog.jpg" class="user-img">
+            <p>Sheikh Hasina</p>
+            </a>
+        </div>
+    </header>
+
+
+<!--main content area -->
+    <main class="main-content">
+        <div class="track-layout">
+            <div class="map-section">
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d35306.8841338804!2d90.38069757288208!3d23.871715244821292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sdhaka%20north%20corporation%20area%20map!5e1!3m2!1sen!2sbd!4v1768136233294!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h1 class="page-header">Track Issue</h1>
+                
+                <div class="input-wrapper">
+                    <input type="text" id="reportId" placeholder="Enter  OTP" class="report-id-field">
+                    <p id="errorText" class="error-msg">⚠️ Please enter a Report ID!</p>
+                </div>
+
+                <div class="progress-stepper">
+                    <div class="stepper-line">
+                        <div id="progressFill" class="step-progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <div class="stepper-items">
+                        <div class="step-node" id="step1">
+                            <div class="node-dot"></div>
+                            <span class="node-label">Submitted</span>
+                        </div>
+                        <div class="step-node" id="step2">
+                            <div class="node-dot"></div>
+                            <span class="node-label">Verified</span>
+                        </div>
+                        <div class="step-node" id="step3">
+                            <div class="node-dot"></div>
+                            <span class="node-label">In Progress</span>
+                        </div>
+                        <div class="step-node" id="step4">
+                            <div class="node-dot"></div>
+                            <span class="node-label">Resolved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="statusBadge" class="status-badge">Status: Waiting for ID</div>
+                
+                <button class="primary-btn" onclick="updateTracking()">Track Status</button>
+
+                <div id="successPopup" class="popup-box">
+                    <span class="icon-check">✓</span> Status Updated
+                </div>
+            </div>
+        </div>
+    </main>
+<!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Company</h3>
+                <ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul><li><a href="#">Terms</a></li><li><a href="#">Privacy Policy</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul><li><a href="#">support@civify.com</a></li><li><a href="#">+880-1XXX-XXXXXX</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2026 CIVIFY. All your reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateTracking() {
+            const id = document.getElementById('reportId').value.trim(); /*otp collect  kore trim use kore space muche jay*/
+            const fill = document.getElementById('progressFill');/*orange clr dot update er jonne*/
+            const badge = document.getElementById('statusBadge');/*status update er jonne*/
+            const nodes = [document.getElementById('step1'), document.getElementById('step2'), document.getElementById('step3'), document.getElementById('step4')];
+            /*tracking er step ba 4 ta dot ke array er modde rekha hoyeche loop chalanor jonne*/
+
+            nodes.forEach(n => n.classList.remove('active')); /*notun kore track er age ager histroy muche jacche*/
+
+            if(id === "") {
+                document.getElementById('errorText').style.display = 'block';
+                return;
+            }
+            document.getElementById('errorText').style.display = 'none';
+
+            let w = 0; let s = "Submitted";  /*w= progress bar er width s=status text*/
+            if(id == "2") { w = 33; s = "Verified"; }
+            else if(id == "3") { w = 66; s = "In Progress"; }
+            else if(id == "4") { w = 100; s = "Resolved"; }
+            else if(id == "1") { w = 0; s = "Submitted"; }
+            else { w = 0; s = "Report Found"; }
+
+            // Update Orange Fill and Status Text
+            fill.style.width = w + "%";
+            badge.innerText = "Status: " + s;
+
+            // Highlight Dots
+            nodes[0].classList.add('active');/* eii line er jonne submit howa dhap dotgula orange dekhabe*/
+            if(w >= 33) nodes[1].classList.add('active');
+            if(w >= 66) nodes[2].classList.add('active');
+            if(w >= 100) nodes[3].classList.add('active');
+        }
+       
+/* NAVBAR ITEMS */
+document.querySelectorAll(".nav-item").forEach(item => { /*menubar shob link khuje ber kre link kore*/
+    item.addEventListener("click", () => {    /*every link e loop chalay*/
+        const page = item.getAttribute("data-link");
+        if (page) {
+            window.location.href = page;
+        }
+    });
+});
+    </script>
+
+</body>
+</html>
